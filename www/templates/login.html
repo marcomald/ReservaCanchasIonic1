@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar>
+    <h1 class="title">Iniciar Sesión</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-person-stalker placeholder-icon"></i>
+          <input type="text" placeholder="Usuario" ng-model="user.name">
+        </label>
+        <label class="item item-input">
+          <i class="icon ion-key placeholder-icon"></i>
+          <input type="password" placeholder="Password" ng-model="user.password">
+        </label>
+        <button class="button button-block button-positive" ng-click="showAlert()">
+          Ingresar
+        </button>
+        <p style="text-align:center">
+         <a href="#" class="subdued">Olvido su contraseña?</a>
+        </p>
+        <p style="text-align:center">
+         <a href="#" class="subdued" ng-click="goCreateUser()">Registrarse !!</a>
+        </p>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

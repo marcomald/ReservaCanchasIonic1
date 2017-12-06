@@ -1,0 +1,41 @@
+<ion-view view-title="Perfil de Usuario">
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider button-energized">
+        Datos Personales
+      </div>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nombres</span>
+        <input type="text" ng-model="user.nombres" readonly>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Apellidos</span>
+        <input type="text" ng-model="user.apellidos" readonly>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numero de contacto 1</span>
+        <input type="text" ng-model="user.numeroContacto1" readonly>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numero de contacto 2</span>
+        <input type="text" ng-model="user.numeroContacto2" readonly>
+      </label>
+      <div class="item item-divider button-energized">
+        Datos de Usuario
+      </div>
+      <label class="item item-input item-stacked-label" >
+        <span class="input-label">Email</span>
+        <input type="text" ng-model="user.email" readonly>
+      </label>
+      <label class="item item-input item-stacked-label" >
+        <span class="input-label">Nick</span>
+        <input type="text" ng-model="user.nick" readonly>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="text" ng-model="user.password" readonly>
+      </label>
+    </div>
+
+  </ion-content>
+</ion-view>

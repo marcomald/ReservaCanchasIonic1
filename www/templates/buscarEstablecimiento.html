@@ -1,0 +1,21 @@
+<ion-view view-title="Establecimientos">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar establecimiento" ng-model="filtroEstablecimiento.buscar">
+      </label>
+    </div>
+    <div id="container-list" style="text-align: center;">
+      <div class="list">
+        <div class="item item-divider">
+          Establecimientos Encontrados
+        </div>
+        <a class="item" ng-repeat="establecimiento in establecimientos | filter : filtroEstablecimiento.buscar"
+        ng-click="verInfoEstablecimiento(establecimiento)">
+          {{establecimiento.nombre}}
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('reservaCanchasApp');
+var app = angular.module('starter');
 app.service('ServicioReserva', funcionServicioReserva);
 
 function funcionServicioReserva($q, $http){
@@ -36,6 +36,18 @@ function funcionServicioReserva($q, $http){
     var fecha = '2017-06-14';
     console.log('FEcha nueva: ',fecha);
     $http.get('http://localhost:1337/Calendario_cancha?where={"id_establecimiento":"'+id_establecimiento+'","fecha":"'+fecha+'"}').then(function(data){
+      defered.resolve(data);
+    },function(err){
+      defered.reject(err);
+    });
+    return promise;
+  };
+
+  this.buscarPorIdUsuario = function(id_usuario){
+    var defered = $q.defer();
+    var promise = defered.promise;
+
+    $http.get('http://localhost:1337/Calendario_cancha?where={"id_usuario":"'+id_usuario+'"}').then(function(data){
       defered.resolve(data);
     },function(err){
       defered.reject(err);

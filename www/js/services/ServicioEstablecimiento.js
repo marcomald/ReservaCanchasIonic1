@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('reservaCanchasApp');
+var app = angular.module('starter');
 app.service('ServicioEstablecimiento', funcionServicioEstablecimiento);
 
 function funcionServicioEstablecimiento($q, $http){

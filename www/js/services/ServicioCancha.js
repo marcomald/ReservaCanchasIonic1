@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('reservaCanchasApp');
+var app = angular.module('starter');
 app.service('ServicioCancha', funcionServicioCancha);
 
 function funcionServicioCancha($q, $http){

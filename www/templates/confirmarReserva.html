@@ -1,0 +1,33 @@
+<ion-view view-title="Confirmar Datos">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+       <span class="input-label">ESTABLECIMIENTO:</span>
+       <input type="text" ng-model="establecimiento.nombre" readonly>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">CANCHA:</span>
+       <input type="text" ng-model="cancha.nombre" readonly>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">FECHA:</span>
+       <input type="text" ng-model="datosReserva.fecha" readonly>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">HORA:</span>
+       <input type="text" ng-model="datosReserva.hora" readonly>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">EMAIL USUARIO:</span>
+       <input type="text" ng-model="usuario.email" readonly>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">PRECIO DE RESERVA:</span>
+       <input type="text" value="45 $" readonly>
+     </label>
+    </div>
+    <button class="button button-block button-energized" ng-click="realizarReserva()">
+      Confirmar Reservacion
+    </button>
+  </ion-content>
+</ion-view>

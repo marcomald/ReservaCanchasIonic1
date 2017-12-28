@@ -35,7 +35,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
       }
     }
   })
@@ -53,7 +54,61 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
-        controller: 'PlaylistsCtrl'
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+  .state('app.home-buscarEstablecimiento', {
+    url: '/home-buscarEstablecimiento',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/buscarEstablecimiento.html',
+        controller: 'BuscarEstablecimientoCtrl'
+      }
+    }
+  })
+  .state('app.home-realizarReserva', {
+    url: '/home-realizarReserva',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/realizarReserva.html',
+        controller: 'RealizarReservaCtrl'
+      }
+    }
+  })
+  .state('app.home-pasosReserva', {
+    url: '/home-pasosReserva',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/pasosReserva.html',
+        controller: 'PasosReservaCtrl'
+      }
+    }
+  })
+  .state('app.home-confirmarReserva', {
+    url: '/home-confirmarReserva',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/confirmarReserva.html',
+        controller: 'ConfirmarReservaCtrl'
+      }
+    }
+  })
+  .state('app.home-buscarCercanos', {
+    url: '/home-buscarCercanos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/buscarCercanos.html',
+        controller: 'BuscarCercanosCtrl'
+      }
+    }
+  })
+  .state('app.home-verEstablecimiento', {
+    url: '/home-verEstablecimiento',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/establecimientoInfo.html',
+        controller: 'InfoEstablecimientoCtrl'
       }
     }
   })
@@ -75,16 +130,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+  .state('createUser', {
+    url: '/create-user',
+    templateUrl: 'templates/createUser.html',
+    controller: 'createUserCtrl'
+  })
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
-    }
-  )
-  .state('login.createUser', {
-    url: '/create-user',
-    templateUrl: 'templates/createUser.html',
-    controller: 'createUserCtrl'
     }
   );
   // if none of the above states are matched, use this as the fallback

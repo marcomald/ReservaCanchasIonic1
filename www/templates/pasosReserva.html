@@ -1,0 +1,51 @@
+<ion-view view-title="Formulario de Reserva">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Establecimiento:
+        </div>
+        <select style="width: 60%;" ng-change="recuperarCanchas()" ng-model="reserva.establecimiento">
+          <option ng-repeat="establecimiento in establecimientos"
+          value="{{establecimiento}}"> {{establecimiento.nombre}}</option>
+        </select>
+      </label>
+      <label class="item">
+        <div class="input-label">
+          Cancha:
+        </div>
+        <select ng-model="reserva.cancha" style="width:100%;-webkit-appearance:none;background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0); border:thin solid #dddddd; font-weight:300; display:inline; vertical-align:middle;
+  color:#333; padding: auto 0; overflow:hidden; box-sizing:border-box;" class="select" ng-change="datosCancha()">
+          <option ng-repeat="cancha in canchas"
+          value="{{cancha}}">{{cancha.nombre}}</option>
+        </select>
+        <div style="text-align:center;margin:auto">
+          <ion-checkbox ng-checked="cancha.iluminacion" style="border:none" onclick="return false">Iluminada</ion-checkbox>
+          <ion-checkbox ng-checked="cancha.cubierta" style="border:none" onclick="return false">Cubierta</ion-checkbox>
+        </div>
+      </label>
+      <label class="item item-input ">
+        <div class="input-label">
+          Fecha:
+        </div>
+        <input type="date" ng-model="reserva.fecha">
+      </label>
+      <label class="item item-input ">
+        <div class="input-label" style="width:20%">
+          Hora:
+        </div>
+        <div style="width: 45%;">
+          <input type="range" name="time" min="8" max="23"
+          ng-model="reserva.hora_inicio" ng-change="calcularHoraFin()">
+        </div>
+        <div ng-if="reserva.hora_inicio != reserva.hora_fin">
+          {{reserva.hora_inicio}}:00 - {{reserva.hora_fin}}:00
+        </div>
+      </label>
+      <button class="button button-block button-energized" ng-click="realizarReserva()">
+        Reservar Cancha!!
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

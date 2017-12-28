@@ -1,5 +1,26 @@
-<ion-view view-title="Search">
+<ion-view view-title="Historial de Reservas">
   <ion-content>
-    <h1>Search</h1>
+
+    <div class="list card" ng-repeat="reserva in reservasCompletas track by $index">
+      <div class="item item-avatar">
+        <h2>{{reserva.establecimiento}}</h2>
+        <p>{{reserva.fechaReserva | date:'mediumDate'}}</p>
+      </div>
+      <div class="item item-body">
+        <p>
+          <b>Cancha:</b> {{reserva.cancha}}
+        </p>
+        <p>
+          <b>Fecha de solicitud:  </b>{{reserva.fechaRealizada}}
+        </p>
+        <p>
+          <b>Hora:</b>  {{reserva.hora | date:'mediumDate'}}
+        </p>
+        <p>
+          <b>Costo:</b>  {{reserva.costo}}
+        </p>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

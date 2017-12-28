@@ -1,12 +1,54 @@
-<ion-view>
+<ion-view view-title="Create 'user'">
   <ion-header-bar>
-    <div class="bar bar-header bar-energized">
-      <h1 class="title">Crear Nuevo Usuario</h1>
+    <div class="bar bar-header bar-energized" style="text-align:center;">
+      <h1  style="color:white;font-size: 2em;margin:auto">Nuevo Usuario</h1>
     </div>
   </ion-header-bar>
   <ion-content>
-    <form>
+    <div class="list">
+      <div class="item item-divider">
+        Datos Personales
+      </div>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nombre</span>
+        <input type="text" placeholder="José" ng-model="user.nombres">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Apellidos</span>
+        <input type="text" placeholder="Perez Maldonado" ng-model="user.apellidos">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="josePeMal@gmail.com" ng-model="user.email">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numero de Contacto 1</span>
+        <input type="text" placeholder="0999231123" ng-model="user.numeroContacto1">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numero de Contacto 2</span>
+        <input type="text" placeholder="2641335" ng-model="user.numeroContacto2">
+      </label>
+      <div class="item item-divider">
+        Datos de Usuario
+      </div>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nick o Nombre de Usuario</span>
+        <input id="inputNickCU" type="text" placeholder="Joselito123" ng-model="user.nick">
+      </label>
+      <label class="item item-input item-stacked-label" >
+        <span class="input-label">Password o Contraseña</span>
+        <input id="inputPasswordCU" type="password" ng-model="user.password">
+      </label>
       
-    </form>
+      <input type="button" ng-click="goLogin()" value="Regresar a login"
+      class="button button-energized" style="margin-bottom: 50px;">
+
+    </div>
   </ion-content>
+  <ion-footer>
+    <div class="bar bar-footer bar-balanced" ng-click="createUser()">
+      <div class="title">Crear Usuario</div>
+    </div>
+</ion-footer>
 </ion-view>

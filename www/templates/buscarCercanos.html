@@ -1,0 +1,39 @@
+<ion-view view-title="Establecimientos Cercanos">
+  <ion-content>
+    <div style="text-align:center">
+      <legend style="font-size:1em;text-align:center">Seleccione la distancia a la que desea buscar: </legend>
+      <div class="row">
+        <div class="col col-75">
+          <div class="item range">
+            <!-- <i class="icon ion-navigate"></i> -->
+            0 Km
+            <input type="range" name="volume" ng-model="rango.distancia" min="0" max="15" color="secondary">
+            15 Km
+            <!-- <i class="icon ion-location"></i> -->
+          </div>
+        </div>
+        <div class="col">
+          <button class="button ion-search button-positive" style="width:100%;height:100%;font-size: 2em;"
+          ng-click="sacarEstablecimientosEnRango()"></button>
+        </div>
+      </div>
+      <div id="container-map" style="padding:10px">
+        <div id="map" style="width:100%;height:300px;"></div>
+      </div>
+      <div id="container-list">
+        <div class="list">
+          <div class="item item-divider">
+            Establecimientos Encontrados
+          </div>
+          <a class="item" ng-if="establecimientosEnRango.length > 0" ng-repeat="establecimiento in establecimientosEnRango"
+          ng-click="verInfoEstablecimiento(establecimiento)">
+            {{establecimiento.nombre}}
+          </a>
+          <a class="item" ng-if="establecimientosEnRango.length == 0">
+            No se han encotrado establecimientos.
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

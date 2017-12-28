@@ -45,7 +45,7 @@ function funcionServicioUsuario($q, $http){
     var defered = $q.defer();
     var promise = defered.promise;
     console.log(nick+' '+password);
-    $http.get('http://localhost:1337/usuario?where={"nick":"'+nick+'","password":"'+password+'"}').then(function(data){
+    $http.get('http://192.168.100.6:1337/usuario?where={"nick":"'+nick+'","password":"'+password+'"}').then(function(data){
       defered.resolve(data);
     },function(err){
       defered.reject(err);
